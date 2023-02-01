@@ -21,6 +21,6 @@
 * Relatório em pdf contém o processo de construção do sistema.
   ** Descrição, tabela-verdade, simplificação, diagrama dos componentes
 * Arquivos .vhdl, ghw e gtkw utilizados•via TAREFAS na Equipe Team  
-  ** por   e-mail:   edmar.bellorini@gmail.com   somente   em   caso   de   problemas   com   oenvio oficial
-  ** Assunto: [SD P04] nomeSobrenome1 nomeSobrenome2
+  * por   e-mail:   edmar.bellorini@gmail.com   somente   em   caso   de   problemas   com   oenvio oficial
+  * Assunto: [SD P04] nomeSobrenome1 nomeSobrenome2
 * Prazo: 7 dias após a apresentação desta atividade, 23h59m!
