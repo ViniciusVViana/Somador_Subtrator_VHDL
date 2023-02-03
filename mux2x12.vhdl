@@ -1,19 +1,20 @@
-library  IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+library  ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity mux2x12 is
     port(
-        x : in std_logic_vector(11 downto 0);
-        y : in std_logic_vector(11 downto 0);
-        cin : in std_logic;
-        op : in std_logic;        
-        cout : out std_logic;
-        saida : out std_logic_vector(11 downto 0);
+        canal_x : in std_logic_vector(11 downto 0);
+        canal_y : in std_logic_vector(11 downto 0);
+        sel_op : in std_logic;        
+        saida_mux : out std_logic_vector(11 downto 0)
     );
 end entity;
 
 architecture comuta of mux2x12 is 
 begin 
     
-end architecture;   
+    saida_mux <= canal_x when sel_op = '0'
+    else canal_y when sel_op = '1';
+
+end architecture;
