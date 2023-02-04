@@ -1,0 +1,19 @@
+v 3
+file . "aux_somador.vhdl" "20230204221404.000" "20230204193113.559":
+  entity aux_somador at 1( 0) + 0 on 331;
+  architecture aux_somando of aux_somador at 19( 381) + 0 on 332;
+file . "somador_subtrator.vhdl" "20230203001642.000" "20230202211645.619":
+  entity somador_subtrator at 1( 0) + 0 on 27;
+  architecture soma_sub of somador_subtrator at 18( 363) + 0 on 28;
+file . "mux2x12.vhdl" "20230204130606.000" "20230204193113.559":
+  entity mux2x12 at 1( 0) + 0 on 333;
+  architecture comuta of mux2x12 at 14( 329) + 0 on 334;
+file . "signalOF.vhdl" "20230204140806.000" "20230204193113.560":
+  entity signalof at 1( 0) + 0 on 335;
+  architecture comuta of signalof at 14( 287) + 0 on 336;
+file . "somador.vhdl" "20230204210454.000" "20230204193113.560":
+  entity somador at 1( 0) + 0 on 337;
+  architecture somando of somador at 19( 309) + 0 on 338;
+file . "tb_aux_somador.vhdl" "20230204223110.000" "20230204193113.561":
+  entity adder at 1( 0) + 0 on 339;
+  architecture arch of adder at 8( 106) + 0 on 340;
