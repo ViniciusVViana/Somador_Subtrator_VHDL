@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity fadder8bits is
+	port(
+		X, Y		: in std_logic_vector(7 downto 0);
+		Cin			: in std_logic;
+		S			: out std_logic_vector(7 downto 0);
+		Cout		: out std_logic
+	);
+end entity;
+
+architecture b of fadder8bits is
+	component fadder is
+		port(
+        	x, y, cin : in std_logic;
+        	s, cout : out std_logic
+    	);
+	end component;
+		
+	signal c0 	: std_logic;
+	signal c1 	: std_logic;
+	signal c2 	: std_logic;
+	signal c3 	: std_logic;
+	signal c4 	: std_logic;
+	signal c5 	: std_logic;
+	signal c6 	: std_logic;
+	signal c7	: std_logic;
+	
+	begin
+		
+		b0 : fadder port map (x => X(0), y => Y(0), cin => Cin, s => S(0), cout => c0);
+		b1 : fadder port map (x => X(1), y => Y(1), cin => c0, s => S(1), cout => c1);
+		b2 : fadder port map (x => X(2), y => Y(2), cin => c1, s => S(2), cout => c2);
+		b3 : fadder port map (x => X(3), y => Y(3), cin => c2, s => S(3), cout => c3);
+		b4 : fadder port map (x => X(4), y => Y(4), cin => c3, s => S(4), cout => c4);
+		b5 : fadder port map (x => X(5), y => Y(5), cin => c4, s => S(5), cout => c5);
+		b6 : fadder port map (x => X(6), y => Y(6), cin => c5, s => S(6), cout => c6);
+		b7 : fadder port map (x => X(7), y => Y(7), cin => c6, s => S(7), cout => c7);
+		Cout <= c6 xor c7;
+
+end architecture;
+		
+	
+
