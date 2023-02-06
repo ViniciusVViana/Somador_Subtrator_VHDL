@@ -1,0 +1,31 @@
+v 3
+file . "subtrator.vhdl" "20230205185248.000" "20230205163603.047":
+  entity somador at 1( 0) + 0 on 501;
+  architecture somando of somador at 15( 243) + 0 on 502;
+file . "somador_1bit.vhdl" "20230205184156.000" "20230205210822.825":
+  entity somador_1bit at 1( 0) + 0 on 877;
+  architecture somando_1bit of somador_1bit at 19( 314) + 0 on 878;
+file . "somador_12bits.vhdl" "20230205235714.000" "20230205210822.825":
+  entity somador_12bits at 1( 0) + 0 on 875;
+  architecture somando_12bits of somador_12bits at 19( 375) + 0 on 876;
+file . "tb_aux_somador.vhdl" "20230205164342.000" "20230205155803.913":
+  entity adder at 1( 0) + 0 on 395;
+  architecture arch of adder at 8( 106) + 0 on 396;
+file . "signalOF.vhdl" "20230205202156.000" "20230205210822.824":
+  entity signalof at 1( 0) + 0 on 873;
+  architecture comuta of signalof at 14( 287) + 0 on 874;
+file . "mux2x12.vhdl" "20230205235734.000" "20230205210822.824":
+  entity mux2x12 at 1( 0) + 0 on 871;
+  architecture comuta of mux2x12 at 16( 346) + 0 on 872;
+file . "aux_somador.vhdl" "20230205172438.000" "20230205142438.761":
+  entity aux_somador at 1( 0) + 0 on 351;
+  architecture aux_somando of aux_somador at 19( 384) + 0 on 352;
+file . "tb_somador.vhdl" "20230205192846.000" "20230205195107.007":
+  entity tb_somador at 1( 0) + 0 on 697;
+  architecture adder of tb_somador at 8( 111) + 0 on 698;
+file . "tb_somador_subtrator.vhdl" "20230206000820.000" "20230205210822.826":
+  entity tb_somador_subtrator_12bits at 1( 0) + 0 on 879;
+  architecture add_sub12bits of tb_somador_subtrator_12bits at 11( 134) + 0 on 880;
+file . "inversor_12bits.vhdl" "20230205235738.000" "20230205210822.824":
+  entity inversor_12bits at 1( 0) + 0 on 869;
+  architecture invertendo of inversor_12bits at 16( 261) + 0 on 870;
