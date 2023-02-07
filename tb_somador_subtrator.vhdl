@@ -10,14 +10,11 @@ end entity;
 
 architecture add_sub12bits of tb_somador_subtrator_12bits is
 
-    component somador_12bits is
+    component inversor_12bits is
         port(
-            canal_x : in std_logic_vector(11 downto 0);
-            canal_y : in std_logic_vector(11 downto 0);
-            canal_cinn : in std_logic;
-            canal_coutt : out std_logic;
-            saida_somaa : out std_logic_vector(11 downto 0)
-         );
+            canal_inv : in std_logic_vector(11 downto 0);
+            saida_inv : out std_logic_vector(11 downto 0)
+        );
     end component;
 
     component mux2x12 is
@@ -29,11 +26,14 @@ architecture add_sub12bits of tb_somador_subtrator_12bits is
         );
     end component;
 
-    component inversor_12bits is
+    component somador_12bits is
         port(
-            canal_inv : in std_logic_vector(11 downto 0);
-            saida_inv : out std_logic_vector(11 downto 0)
-        );
+            canal_x : in std_logic_vector(11 downto 0);
+            canal_y : in std_logic_vector(11 downto 0);
+            canal_cinn : in std_logic;
+            canal_coutt : out std_logic;
+            saida_somaa : out std_logic_vector(11 downto 0)
+         );
     end component;
 
     component signalOF is
@@ -50,18 +50,18 @@ architecture add_sub12bits of tb_somador_subtrator_12bits is
 
 begin
 
-    u_somador_12bits : somador_12bits port map(scanal_x, scanal_y, scanal_cinn, scanal_coutt, ssaida_somaa);
-    u_mux2x12 : mux2x12 port map(scanal_normal, scanal_invertido, ssel_op, ssaida_mux);
     u_inversor_12bits : inversor_12bits port map(scanal_inv, ssaida_inv);
+    u_mux2x12 : mux2x12 port map(scanal_normal, scanal_invertido, ssel_op, ssaida_mux);
     u_signalOF : signalOF port map(scanal_x_overflow, scanal_y_overflow, scanal_z_overflow, scanal_saida_overflow);
+    u_somador_12bits : somador_12bits port map(scanal_x, scanal_y, scanal_cinn, scanal_coutt, ssaida_somaa);
 
     scanal_x <= saux1;
     scanal_normal <= saux2;
     scanal_inv <= saux2;
     scanal_invertido <= ssaida_inv;
     ssel_op <= saux3;
-    scanal_y <= ssaida_mux;
     scanal_cinn <= saux3;
+    scanal_y <= ssaida_mux;
     scanal_x_overflow <= scanal_x(11);
     scanal_y_overflow <= scanal_y(11);
     scanal_z_overflow <= ssaida_somaa(11);
@@ -81,7 +81,7 @@ begin
         wait for 10 ns;
 
         saux3 <= '0';
-        saux1 <= x"FFF";
+        saux1 <= x"000";
         saux2 <= x"001";
         wait for 10 ns;
 
@@ -99,6 +99,11 @@ begin
         saux3 <= '0';
         saux1 <= x"0FF";
         saux2 <= x"0FF";
+        wait for 10 ns;
+
+        saux3 <= '0';
+        saux1 <= x"FFF";
+        saux2 <= x"FFF";
         wait for 10 ns;
 
     end process;
